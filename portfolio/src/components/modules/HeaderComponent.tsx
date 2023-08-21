@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Link, Outlet } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux/es/exports';
 import { Types } from '../reducer/Types';
+import './Styles.scss'
 
 export default function HeaderComponent() {
     const dispatch = useDispatch()
@@ -11,7 +12,7 @@ export default function HeaderComponent() {
 
     }, [])
     return (
-        <div>HeaderComponent
+        <div className='HeaderStyles container'>HeaderComponent
             <Outlet />
 
         </div>
