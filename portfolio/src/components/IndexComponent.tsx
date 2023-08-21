@@ -56,6 +56,8 @@ export default function SwipeableEdgeDrawer(props: Props) {
         <Root>
             <Link to={'/'}> Home</Link>
             <Link to={'/secondComponet'}> Header Element </Link>
+            <Link to={'/secondComponet/childcomp2'}> ChildElemett </Link>
+
 
             <CssBaseline />
             <Global
