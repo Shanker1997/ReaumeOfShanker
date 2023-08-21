@@ -7,6 +7,7 @@ import RoutesRoot from './routes/Routes';
 function App() {
   return (
     <div className="App">
+      <SwipeableEdgeDrawer />
       <RoutesRoot />
     </div>
   );
