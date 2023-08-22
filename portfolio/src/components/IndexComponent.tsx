@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import { Global } from '@emotion/react';
 import { styled } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -9,6 +9,7 @@ import Skeleton from '@mui/material/Skeleton';
 import Typography from '@mui/material/Typography';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import { Link } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 const drawerBleeding = 56;
 
@@ -43,10 +44,17 @@ const Puller = styled(Box)(({ theme }) => ({
 export default function SwipeableEdgeDrawer(props: Props) {
     const { window } = props;
     const [open, setOpen] = React.useState(false);
+    const { textEditorData } = useSelector((state: any) => state.application)
+    useEffect(() => {
+        console.log(textEditorData, "49.....")
+
+    }, [textEditorData])
+
 
     const toggleDrawer = (newOpen: boolean) => () => {
         setOpen(newOpen);
     };
+
 
     // This is used only for the example
     const container = window !== undefined ? () => window().document.body : undefined;
@@ -108,6 +116,7 @@ export default function SwipeableEdgeDrawer(props: Props) {
                     <Skeleton variant="rectangular" height="100%" />
                 </StyledBox>
             </SwipeableDrawer>
+
         </Root>
     );
 }

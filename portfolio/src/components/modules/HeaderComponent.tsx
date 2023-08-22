@@ -12,9 +12,9 @@ export default function HeaderComponent() {
 
     }, [])
     return (
-        <div className='HeaderStyles container'>HeaderComponent
-            <Outlet />
+        <div className=' container'>HeaderComponent
 
+            <Outlet />
         </div>
     )
 }
