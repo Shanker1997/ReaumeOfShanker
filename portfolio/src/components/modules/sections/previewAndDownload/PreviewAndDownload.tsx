@@ -2,11 +2,10 @@ import React, { useState, useRef, useEffect, useMemo } from 'react';
 import JoditEditor from 'jodit-react';
 import { Button } from '@mui/material';
 import { useDispatch } from 'react-redux';
-import { Types } from '../reducer/Types';
+import { Types } from '../../../reducer/Types';
 import { useSelector } from 'react-redux';
 
-
-const Example = () => {
+export default function PreviewAndDownload() {
     const editor = useRef(null);
     const [content, setContent] = useState('');
     const [newContent, setNewContent] = useState("")
@@ -39,10 +38,9 @@ const Example = () => {
 
     }
 
-
-
     return (
-        <>
+        <div> 
+
             <JoditEditor
                 ref={editor}
                 value={content}
@@ -52,8 +50,6 @@ const Example = () => {
                 onChange={newContent => { setContentfunction(newContent) }}
             />
             <div><Button onClick={SetDataInStore}>Submit Data</Button></div>
-        </>
-
-    );
-};
-export default Example
+        </div>
+    )
+}

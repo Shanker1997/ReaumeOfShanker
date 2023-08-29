@@ -1,4 +1,7 @@
+@import '../../commonStyles/Mixins.scss';
+
 .navBarContainer {
+
     background-color: rgba(27, 118, 211, 255);
     font-weight: 600;
     padding: 4px;
@@ -6,14 +9,10 @@
     justify-content: space-around;
 
     .logoContainer {
-        height: 45px;
-        background-color: black;
-        width: 20%;
-        border: solid black 2px;
-        border-radius: 5px;
+
+        @include sideContainer;
         border-top-right-radius: 20px;
         border-bottom-right-radius: 20px;
-        display: flex;
         // box-shadow: 2px 2px 2px aliceblue;
 
         img {
@@ -26,13 +25,9 @@
             display: flex;
 
             p {
-                text-align: center;
-                margin: auto;
+                @include headerSideTxt;
                 color: rgba(40, 169, 232, 255);
-                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-                font-style: oblique;
-                font-weight: 900;
-                text-shadow: 1px 1px green;
+
 
             }
         }
@@ -51,11 +46,52 @@
             padding: 10px;
             font-size: 12px;
 
+            &:active {}
         }
 
         :last-child {
             border: none;
         }
 
+        a.active {
+            background-color: aliceblue;
+            color: black;
+
+        }
+
+    }
+
+    .ProfileContainer {
+        @include sideContainer;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+
+        .profilepic {
+            height: 100%;
+            width: 50%;
+
+            .MuiAvatar-circular {
+                margin-left: 20px;
+
+            }
+        }
+
+        .UserName {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            p {
+                @include headerSideTxt;
+                color: greenyellow;
+                margin-left: 3px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
     }
 }
