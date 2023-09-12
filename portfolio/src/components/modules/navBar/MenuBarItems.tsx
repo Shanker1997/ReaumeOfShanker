@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
+import { generapApis } from '../../../config/envi';
 
 export default function MenuBarItems() {
+    useEffect(() => {
+        // fetch(generapApis.fetchjson).then((response: any) => console.log(response.json(), "7...."))
+    })
     return (
         <div className='menuBarList'>
 
